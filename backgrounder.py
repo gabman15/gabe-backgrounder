@@ -8,8 +8,10 @@ import random
 import os
 
 def set_bg(img):
-    os.system("feh --bg-max "+img)
-
+    if (os.getenv('WAYLAND_DISPLAY') == None):
+        os.system('swaymsg output "*" bg '+img+" fill")
+    else:
+        os.system("feh --bg-max "+img)
 
 def get_total(szuru_api_url: str, headers: str) -> int:
     query_url = szuru_api_url + '/posts/?query=gabe_background'
