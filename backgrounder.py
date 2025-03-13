@@ -9,7 +9,7 @@ import os
 
 def set_bg(img):
     if (os.getenv('WAYLAND_DISPLAY') is not None):
-        os.system('swaymsg output "*" bg ' + img + " fill")
+        os.system('swaymsg output "*" bg ' + img + " fit")
     else:
         os.system("feh --bg-max " + img)
 
