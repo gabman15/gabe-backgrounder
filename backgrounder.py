@@ -106,12 +106,12 @@ if __name__ == "__main__":
 
     if (bg_data['current'] == 1):
         set_bg(img_loc + bg_data['2'])
-        os.system("rm " + img_loc + bg_data['1'])
+        os.remove(img_loc + bg_data['1'])
         bg_data['1'] = download_start(url, user, token, img_loc, bg_data['2'])
         bg_data['current'] = 2
     elif (bg_data['current'] == 2):
         set_bg(img_loc + bg_data['1'])
-        os.system("rm " + img_loc + bg_data['2'])
+        os.remove(img_loc + bg_data['2'])
         bg_data['2'] = download_start(url, user, token, img_loc, bg_data['1'])
         bg_data['current'] = 1
     else:
